@@ -1,0 +1,16 @@
+language: java
+
+jdk:
+  - oraclejdk8
+
+build:    
+  ci:    
+    - echo $ARTIFACTORY_USERNAME
+    - echo $ARTIFACTORY_PASSWORD
+    - echo $ARTIFACTORY_URL
+    - mvn deploy
+
+integrations:
+  hub:
+    - integrationName: jfrog
+      type: artifactory
