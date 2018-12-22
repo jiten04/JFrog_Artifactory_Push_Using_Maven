@@ -1,16 +1,15 @@
-language: java
+<settings>
+    <profiles>
+        <profile>
+            <id>artifactory-plugin-properties</id>
+            <properties>
+                <username>admin</username>
+                <password>password</password>
+            </properties>
+        </profile>
+    </profiles>
 
-jdk:
-  - oraclejdk8
-
-build:    
-  ci:    
-    - echo $ARTIFACTORY_USERNAME
-    - echo $ARTIFACTORY_PASSWORD
-    - echo $ARTIFACTORY_URL
-    - mvn deploy
-
-integrations:
-  hub:
-    - integrationName: jfrog
-      type: artifactory
+    <activeProfiles>
+        <activeProfile>artifactory-plugin-properties</activeProfile>
+    </activeProfiles>
+</settings>
